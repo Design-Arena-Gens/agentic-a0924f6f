@@ -1,0 +1,158 @@
+:root {
+  color-scheme: light;
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #e2e8f0;
+  --panel-bg: rgba(255, 255, 255, 0.82);
+  --panel-border: rgba(148, 163, 184, 0.45);
+  --accent: #6366f1;
+  --accent-strong: #4338ca;
+  --accent-soft: rgba(99, 102, 241, 0.12);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  color: var(--text-primary);
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.preview-surface {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.12) 0%, rgba(99, 102, 241, 0) 55%),
+    var(--panel-bg);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.controls-card {
+  backdrop-filter: blur(18px);
+  background: var(--panel-bg);
+  border-radius: 1.5rem;
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 25px 50px -15px rgba(15, 23, 42, 0.35);
+}
+
+button.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+button.primary:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.35);
+}
+
+button.secondary {
+  background: white;
+  color: var(--text-primary);
+  border-radius: 9999px;
+  border: 1px solid var(--panel-border);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s ease, border 0.15s ease;
+}
+
+button.secondary:hover {
+  transform: translateY(-1px);
+  border-color: rgba(99, 102, 241, 0.45);
+}
+
+input[type='range'] {
+  width: 100%;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.35);
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+  cursor: pointer;
+}
+
+input[type='color'] {
+  width: 100%;
+  height: 42px;
+  border-radius: 0.75rem;
+  border: 1px solid var(--panel-border);
+  background: white;
+  padding: 0;
+}
+
+.control-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+ul.option-pills {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+ul.option-pills li button {
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: white;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+ul.option-pills li button.active {
+  background: var(--accent-soft);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--accent-strong);
+}
